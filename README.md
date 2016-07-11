@@ -6,8 +6,8 @@ In our secondary mission, we measure the intensity of atmospheric refraction, th
 * The refractive index of air at any point can be determined by the equation:
 **`n = C*P/T`**
 where _C_ is a known constant.
-*	The pressure of air at height H is constant.
-*	The same is true for temperature at height H.
+*	The pressure of air at height *H* is constant.
+*	The same is true for temperature at height *H*.
 
 With said assumptions made, we attempt to determine the path of a light ray running through the atmosphere at a certain angle from a certain height, to see whether it could create a false image, much like the mirages observed on roads during hot days.
 
@@ -15,7 +15,7 @@ The program we use for simulating the path utilises data on pressure and tempera
 
 1.	Turning an array of data points about pressure and temperature at certain heights into an approximate, but continuous function.
 
-  Any two points can be connected by a line, and the coordinates of said points can be used to determine the function describing aforementioned line. The function can in turn be used to determine the value of Y for any given X. Our program assumes that pressure between two data points changes in a linear way,  and finds the function describing a line that connects points _P<sub>n</sub>_ and _P<sub>n+1</sub>_. A function describing a line takes the form of **`f(x) = ax + b`**, and can be determined by solving two equations for a and b, which yield the following universal equations for determining a line function using two known points:
+  Any two points can be connected by a line, and the coordinates of said points can be used to determine the function describing aforementioned line. The function can in turn be used to determine the value of *Y* for any given *X*. Our program assumes that pressure between two data points changes in a linear way,  and finds the function describing a line that connects points _P<sub>n</sub>_ and _P<sub>n+1</sub>_. A function describing a line takes the form of **`f(x) = ax + b`**, and can be determined by solving two equations for a and b, which yield the following universal equations for determining a line function using two known points:
     *  a = (Y<sub>1</sub> - Y<sub>2</sub>) / (X<sub>1</sub> - X<sub>2</sub>)
     *  b = Y<sub>1</sub> - (a * X<sub>1</sub>)
   
@@ -36,14 +36,14 @@ The program we use for simulating the path utilises data on pressure and tempera
 
   From those assumptions it can be concluded that a light ray running through the atmosphere would only refract once it travels a meter vertically, and said refraction can be described by Snell’s law in the following way:
   
-  *  sin⁡α / sin⁡β = n<sub>1</sub> / n<sub>2</sub>
+  *  sin⁡*α* / sin*⁡β* = n<sub>1</sub> / n<sub>2</sub>
   
   or
   
-  *  β = arcsin⁡(n<sub>n</sub> * n<sub>n</sub> / n<sub>n+1</sub> * sin *α*)
+  *  β = arcsin⁡(n<sub>n</sub><sup>2</sup> / n<sub>n+1</sub> * sin*α*)
 
 4.	Knowing that a light ray travels a meter at a certain angle before refracting, we conclude that distance travelled horizontally between two adjacent refractions is equal to
- d=1m*tan⁡α .
+ `d = 1m * tan⁡*α*` .
 
 5.	Using the aforementioned calculations, we determine the position of the ray at various heights, separated by a meter, thus approximating its path.
 
