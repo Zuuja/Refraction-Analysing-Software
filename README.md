@@ -1,7 +1,7 @@
 # Refraction Analysing Software
-This pice of software was created for the GiLASat team's secondary mission which was part of their participation in the 2016 CanSat competition.
+This piece of software was created for the GiLASat team's secondary mission which was part of their participation in the 2016 CanSat competition.
 
-## Inroduction
+## Introduction
 In our secondary mission, we measure the intensity of atmospheric refraction, the phenomenon of light rays bending as they travel across the atmosphere. In our analysis, we assume that:
 * The refractive index of air at any point can be determined by the equation:
 **`n = C*P/T`**
@@ -47,3 +47,55 @@ The program we use for simulating the path utilises data on pressure and tempera
 
 5.	Using the aforementioned calculations, we determine the position of the ray at various heights, separated by a meter, thus approximating its path.
 
+## Program usage
+
+To run the program you have to use node.js. You can download it [here](https://nodejs.org/en/download/).
+
+### Data format
+  
+Data should be placed in a *.txt file. Each line of the file have to contain (in the following order):
+  * height(in meters),
+  * pressure(in Pascal's),
+  * temperature(in Celsius degrees)
+  
+divided by a single space.
+
+Records had to be sorted by the height value (from the lowest value).
+  
+An example a correct dataset:
+>2.84929123898 101295.516369 15.097044793
+  
+>14.2020115687 101164.536999 14.7184390036
+  
+>25.5547318984 101038.97901 14.9812686216
+  
+>36.9074522281 100868.171518 14.0979884198
+  
+>48.2601725579 100712.013515 15.0572069656
+  
+>59.6128928876 100637.413782 14.0790090275
+  
+>70.9656132173 100488.580001 14.8283974694
+  
+>82.318333547 100348.318971 14.075228432
+  
+>93.6710538767 100210.397017 14.7188872509
+  
+>105.023774206 100092.022043 14.9430260532
+  
+>116.376494536 99941.9585085 14.8726214426
+  
+>127.729214866 99775.4236311 13.8541470468
+  
+### Running the program
+To use the program you have to run script app.js via node with the following arguments:
+* [input_file] - name of the input file, eg.: dataset1.txt, data/dataset1.txt;
+* [output_file] - name of the output file, notice that it have to be in the same folder as the app.js, eg.: results1.txt but not results/result1.txt!;
+* [start_height] - the height on which the analysis will start;
+* [analysis_step] (default set on 100) - distance between succeeding points of the analysis.
+ 
+An exemplary program running with data in file data.txt:
+
+`node app.js data.txt result.txt 3000 50`
+
+`node app.js data/refraction1.txt result1.txt 2500`
