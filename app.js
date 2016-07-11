@@ -2,7 +2,7 @@ var Line = require('./Linearize.js');
 var fs = require('fs');
 var inPath = process.argv[2];
 var outPath = process.argv[3];
-var loggingFrequency = process.argv[5] == undefined ? 100 : process.argv[4];
+var loggingFrequency = process.argv[5] == undefined ? 100 : process.argv[5];
 var stringData = fs.readFileSync(inPath).toString().trim();
 
 var RowArrays = stringData.split('\n');
