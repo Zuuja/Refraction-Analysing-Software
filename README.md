@@ -90,7 +90,7 @@ An example a correct dataset:
 ### Running the program
 To use the program you have to run script app.js via node with the following arguments:
 * [input_file] - name of the input file, eg.: dataset1.txt, data/dataset1.txt;
-* [output_file] - name of the output file, notice that it have to be in the same folder as the app.js, eg.: results1.txt but not results/result1.txt!;
+* [output_file] - name of the output file, notice that __it have to be in the same folder as the app.js__, eg.: results1.txt;
 * [start_height] - the height on which the analysis will start;
 * [analysis_step] (default set on 100) - distance between succeeding points of the analysis.
  
